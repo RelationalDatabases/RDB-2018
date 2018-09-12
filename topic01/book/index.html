@@ -7,6 +7,8 @@
 
      
 
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
@@ -144,9 +146,10 @@ body
 
 <div class="ui segment pushable">
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
     
       
-        <a class="item" href="../../topic01/book/index.html">
+        <a class="active item" href="../../topic01/book/index.html">
           Lab-01
         </a>
       
@@ -158,54 +161,79 @@ body
       
       <div  class="ui tab segment lab" data-tab="Lab-01">
         <h1>Objectives</h1>
-<p>This lab will firstly introduce you to MySQL.  It will show you how to setup MySQL on your own laptop.</p>
+<p>This lab will firstly introduce you to the learning environment provided by Oracle Academy.  It will show you how to setup an Oracle Academy account and login to ilearning to access the module materials.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="01">
         <h1>Setup</h1>
-<h2>Instructions for setting up MySQL</h2>
+<h2>Instructions for setting up an Oracle Academy membership</h2>
 <p>First you must have an oracle account.
 Go to - <a href="http://Oracle.com/">http://Oracle.com/</a> and sign up for an oracle account.
-Next go to - <a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>
-Scroll down the page and choose your operating system from the dropdown box. click on the image shown below:</p>
+Next go to - <a href="http://academy.oracle.com/">http://academy.oracle.com/</a> click on Sign In/Register for Account.
+Scroll down the page and click on the image shown below:</p>
 <p><img src="./img/00.png" alt=""></p>
-<p>There is documentation to help with your install process.</p>
-<ul>
-<li><a href="https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html">https://dev.mysql.com/doc/refman/8.0/en/mysql-installer.html</a></li>
-</ul>
-<p>The MySQL installer will bring you through the process, you need to choose the full install so all products are installed.
-Make sure you setup a root user and make a note of the password you set as you will need it frequently during this semester.</p>
-<p>Workbench should start once the installation is complete.</p>
-<p><img src="./img/01.png" alt=""></p>
-<p>You should see the instance that was setup by default during the install. Double click on it now and using the password you set you can login.</p>
+<p>Next scroll down and read the 7 steps on joining Oracle Academy.</p>
 <p><img src="./img/02.png" alt=""></p>
-<p>Once you are logged in you will see the following screen:</p>
+<p>Choose the button to join as an individual.</p>
+<p><img src="./img/01.png" alt=""></p>
+<p>While joining as an idividual you will need to choose Waterford Institute of Technology from the list of institutions so you are associated to W.I.T</p>
 <p><img src="./img/03.png" alt=""></p>
+<p>Once you complete the registration process you should be able to login to the Oracle iLearning website.</p>
+<h2>Instructions for accessing Oracle Academy ilearning site</h2>
+<ul>
+<li><a href="http://ilearning.oracle.com/ilearn/en/learner/jsp/login.jsp?site=OracleAcad">http://ilearning.oracle.com/ilearn/en/learner/jsp/login.jsp?site=OracleAcad</a></li>
+</ul>
+<p>To login use the username and password given to you (replace snn with s and the two digit number assigned to you in class)</p>
+<p>username: ie_wit_db_snn
+password: databases2017</p>
+<p>Once logged in you will be asked to update your password to at least 8 characters. </p>
+<p>Then you should see the following:</p>
+<p><img src="./img/04.png" alt=""></p>
+<p>This page gives you access to some of the the curriculum used in this module.</p>
+<p>Open a new page and go to - <a href="https://apex.oracle.com/en/">https://apex.oracle.com/en/</a></p>
+<p><img src="./img/05.png" alt=""></p>
+<p>Click Get Started and choose Free Workspace</p>
+<p><img src="./img/06.png" alt=""></p>
+<p>Choose an application development workspace then fill in the form. Name you workspace using your full name.</p>
+<p><img src="./img/09.png" alt=""></p>
+<p>Name the schema relationaldatabasesproject</p>
+<p><img src="./img/10.png" alt=""></p>
+<p>Answer the questions and agree to the terms and conditions. Submit the request and you should receive an email that the workspace has been created for you.</p>
+<p><img src="./img/11.png" alt=""></p>
+<p>Go to the login screen and enter your details, once you are logged in you should see the following:</p>
+<p><img src="./img/12.png" alt=""></p>
+<p>These two sites are what you will be using for at least the first 6-8 weeks of this module. Save your usernames and passwords for these sites.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
-        <h1>Download and install MySQL sample database</h1>
-<p>Download the following file:</p>
-<p>-<a href="archives/mysqlsampledatabase.zip">classic models databse</a></p>
-<p>Extract the files onto your file system.</p>
-<p>In workbench choose File-&gt; Open SQL Script , choose the file that you have just extracted from the zip, it is named mysqlsampledatabase.sql</p>
-<p><img src="./img/04.png" alt=""></p>
-<p>It is now viewable in the workbench environment.</p>
-<p><img src="./img/05.png" alt=""></p>
-<p>To execute the SQL script you click Execute button shown by the lightening icon</p>
-<p><img src="./img/06.png" alt=""></p>
-<p>Right click inside the Schema panel and click Refresh All button to update the panel.</p>
+        <h1>Accessing curriculum</h1>
+<h2>ilearning</h2>
+<p>To access the curriculum shown in lectures login to ilearning.
+Click the play button beside Database Design - Student - English</p>
+<p>In the left hand pane click on Section 2: Entities and Attributes </p>
+<p>You will see a page similar to this:</p>
 <p><img src="./img/07.png" alt=""></p>
-<p>You should now see the classicmodel database is loaded successfully into MySQL database server.</p>
+<p>Click on either the number 1, or on the Next Lesson button.</p>
+<p>The following icons are shown:</p>
 <p><img src="./img/08.png" alt=""></p>
+<p>The book link will open a new tab and display the html page containing the curriculum material.
+The graduation cap will open a new tab and display a pdf version of the curriculum material.
+The writing hand will open a pdf that contains practice activities for the section.</p>
+<p>These icons show for each subsection within Entities and Attributes.</p>
 <p>You should now complete the activities for subsection 2-2 Entities, Instances, Attributes and Identifiers.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="Exercises">
-        <p>#</p>
+        <h1>Installing MySQL</h1>
+<p>It is also a good idea to try downloading and installing a database for your own loptop.</p>
+<ul>
+<li><a href="http://dev.mysql.com/downloads/windows/installer/5.7.html">http://dev.mysql.com/downloads/windows/installer/5.7.html</a></li>
+</ul>
+<p>You will need to use your Oracle signin to access the download.</p>
+<p>Download the the MySQL installer and follow the steps to install MySQL Server, workbench, sample databases and connectors.</p>
 
       </div>
      
