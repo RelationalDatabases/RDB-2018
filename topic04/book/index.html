@@ -117,13 +117,13 @@ body
   <header class="header item">
     <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-       Entity Relationship Modelling
+      Relationship transferability, resolution and super/subtypes modelling
     </a>
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Lab-03">
-      Lab-03
+    <a class="item" data-tab="Lab-04">
+      Lab-04
     </a>
     
     <a class="item" data-tab="01">
@@ -132,10 +132,6 @@ body
     
     <a class="item" data-tab="02">
       02
-    </a>
-    
-    <a class="item" data-tab="Exercises">
-      Exercises
     </a>
     
     <div class="item">
@@ -161,13 +157,13 @@ body
       
     
       
-        <a class="active item" href="../../topic03/book/index.html">
+        <a class="item" href="../../topic03/book/index.html">
           Lab-03
         </a>
       
     
       
-        <a class="item" href="../../topic04/book/index.html">
+        <a class="active item" href="../../topic04/book/index.html">
           Lab-04
         </a>
       
@@ -183,80 +179,37 @@ body
     <div class="ui basic segment" id="labchat">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Lab-03">
+      <div  class="ui tab segment lab" data-tab="Lab-04">
         <h1>Objectives</h1>
-<p>This lab will put into practice the entity relationship diagraming you have seen in the lectures.</p>
+<p>ER Modelling practice</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="01">
-        <h1>ERDish practice</h1>
-<p><img src="./img/00.png" alt=""></p>
-<ul>
-<li>Each EMPLOYEE may be assigned to one or more DEPARTMENTs.</li>
-<li>Each DEPARTMENT must be responsible for one or more EMPLOYEEs.</li>
-</ul>
-<ul>
-<li>Each EMPLOYEE must be assigned to one and only one DEPARTMENT.</li>
-<li>Each DEPARTMENT must be responsible for one or more EMPLOYEEs.</li>
-</ul>
-<ul>
-<li>Each EMPLOYEE must be assigned to exactly one DEPARTMENT.</li>
-<li>Each DEPARTMENT may be responsible for exactly one EMPLOYEE.</li>
-</ul>
-<p>Which text corresponds to the image?</p>
-<p>Using ERDish write the relationships for the diagram below.
-Comment on each one, do you think each is correct?</p>
-<p><img src="./img/01.png" alt=""></p>
+        <h1>Business Rules</h1>
+<p>Members of your design team have been working with the local hospital to develop a data
+model for their need to store information about patients, the patient&#39;s room number, the
+patient&#39;s doctor, drug prescriptions given, and specific drug information.</p>
+<p>However, they all went on vacation and left you to figure out the model. They also failed to
+give you any of their documentation other than the entities and attributes illustrated here.
+Instead of going back to the hospital, which could reflect poorly on your company, you’re
+going to have to think about everything you know about hospitals!</p>
+<p>Your task is in pairs to generate a list of business rules you think were used to arrive at the information
+shown here. Use your imagination. List 10 structural rules, 5 procedural rules, and
+2 programmatic rules (rules to be addressed by computer applications in the future). State
+each rule as a single sentence.</p>
+<p>Based on your set of business rules, draw the ERD.</p>
+<p><img src="./img/03.png" alt=""></p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
-        <h1>Practice</h1>
-<p>Identify the Entities, optional and mandatory Attributes, unique identifiers, and relationships (including optionality and cardinality) for the following business description:</p>
-<p>Splash n&#39; Stretch is a leisure centre with both a gym and swimming pool. All users of the facilities must be members. Classes are taught in the leisure centre for members. Members must register for classes and some classes require additional payment. In addition, members must provide the instructor with any medical/ health issues which may affect their participation, for example, if a members is asthmatic, has a heart problem, has epilepsy etc. Each class is taught by a qualified staff member from the gym or pool departments. Employees consist of cleaners, office staff, receptionists, gym instructors, and lifeguards. Each department has its own manager. Each employee has a unique employee ID, PPS number, name, address, phone number and start date. The leisure centre requires that all staff are qualified in first aid. This qualification must be renewed every two years. Lifeguard qualifications also need to be renewed every two years and the gym instructors must also hold the necessary qualifications.</p>
-<p>Once you have identified everything, draw the diagram.
-Check that all the relationships are drawn correctly by using the ERDish technique.</p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="Exercises">
-        <h1>Exercises</h1>
-<p>You are a small database consulting company specializing in developing databases
-for the medical industry. You have just been awarded the contract to develop a data
-model for a database application system for a mid-size health insurance company to
-keep track of health claims including patient information, provider(doctor)
-information, information about patient visits to their doctor as well as prescription
-drugs prescribed to patients.</p>
-<p>Information such as patient name, address, phone, email etc. are needed as well as
-who each patient’s primary care doctor is, their insurance ID number and insurance
-company name. We also want information on each doctor such as their specialty
-and what hospitals they are affiliated with as well as their phone, address etc.
-Regarding the hospitals themselves we will need to know where they are located
-and how to contact them.</p>
-<p>The prescriptions given to each patient by a health-care provider also need to be
-tracked in this particular database at this time to determine claim eligibility including
-some basic information on the drug being prescribed to make sure there are no
-conflicts with a patient’s other prescriptions. We need to know each drug’s name,
-purpose/use and possible side effects.</p>
-<p>Eventually, the database will be used to track trends and for some extrapolative
-modeling based on the accumulated data. The database will be accessible in English
-only right now, although plans include making it available in multiple languages
-eventually.</p>
-<p>Based on the business scenario stated above you will identify the database needs,
-and then create a conceptual data model to support these needs.</p>
-<ol>
-<li>Review the types of information a medical database may contain. Read articles
-and check  the internet to understand the challenges of tracking this information.</li>
-<li>Research medical information to better understand your topic. Look for the type of
-information you will need to track.</li>
-<li>Build a list of business needs, rules and assumptions based on your scenario,
-research, and objectives.</li>
-<li>Develop a list of potential entities including their attributes, the attribute’s
-optionality as well as a possible UID for each entity.</li>
-<li>Create a preliminary Entity Relationship Diagram (ERD) that meets these needs
-and objectives.</li>
-</ol>
+        <h1>Health Insurance Company</h1>
+<p>Use this time to continue work on the health insurance company from the exercises step in lab3.</p>
+<p>You should have a least 4 entities with a list of attributes for each, indicating the UID and the optionality of each attribute.</p>
+<h2>Continuous assessment</h2>
+<p>You should have the start of a business description for your continuous assessment. Please show it to me in this class. Start to list your entities and attributes.</p>
+<p>Don&#39;t leave this lab without having a clear idea and first draft of business description for your continuous assessment.</p>
 
       </div>
      
