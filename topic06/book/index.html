@@ -1,0 +1,339 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      Create Tables and Insert data
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-06">
+      Lab-06
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic06/book/index.html">
+          Lab-06
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-06">
+        <h1>Objectives</h1>
+<p>This lab will put into practice the identification of unique identifiers and the process of normalisation.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Resolving many to many relationships</h1>
+<p>A teacher teaches many different classes during the school day. Each class must be assigned a teacher so that students are not left unattended.
+Draw this relationship and then resolve it if necessary.</p>
+<p>A business stores information on their interpreters and the languages they are qualified in. Some interpreters are qualified in more than one language and each language can have several different interpreters available.</p>
+<p>For each intersection entity, think of additional attributes like a UID.</p>
+<ul>
+<li>From the work you did on the Medical practice in lab05 step 2:</li>
+</ul>
+<p>Any many-to-many relationships will need to be resolved. For example each
+doctor may be affiliated with many hospitals and each hospital may have
+many doctors affiliated with it. We need to make sure the many-to-many
+relationships are resolved.</p>
+<p>Modify your diagram to include the relationships and resolve any many to many relationships.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Artificial, composite, and secondary UIDs</h1>
+<p>Draw the ER diagram for this scenario ( you may already have some of it worked out from a previous lab):</p>
+<p>I’m the owner of a small movie hire store. We have over 3,000 DVDs that we need to keep track of.</p>
+<p>Each of our DVDs has a disk number. For each movie, we need to know its title and category (e.g., comedy, suspense, drama, action, war, or sci-fi). Yes, we do have multiple copies of many of our movies. We give each movie a specific ID, and then we track which movie a disk contains. A disk may be either High Definition (HD) or BlueRay format. We always have at least one disk for each movie we track, and each disk is always a copy of a single, specific movie. Our disks are very big, although we don’t have any movies that require multiple disks.</p>
+<p>We are frequently asked for movies starring specific actors. John Wayne and Kathe-rine Hepburn are always popular. So we’d like to keep track of the star actors appearing in each movie. Not all of our movies have star actors. Customers like to know each actor’s “real” birth name and date of birth. We track only actors who appear in the mov-ies in our inventory.</p>
+<p>We have lots of customers. We only rent DVDs to people who have joined our DVD club. To belong to our club, they must have good credit. For each club member, we’d like to keep the first and last name, current phone number, and current address. And, of course, each club member has a membership number.</p>
+<p>Then we need to keep track of what DVDs each customer currently has checked out. A customer may check out multiple DVDs at any given time. We just track current rent-als. We don’t keep track of any rental histories.</p>
+<p>Resolve any M:M relationships and identify UIDs for all entities.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>1NF 2NF 3NF</h1>
+<p>Check to see if each ERD is in &quot;1NF&quot;, if not make the necessary changes to correct it.</p>
+<p><img src="./img/01.png" alt=""></p>
+<p>A store can be located in several shopping malls, and a shopping mall has many stores. To locate a particular store in a specific neighborhood, you need the name and address of the nearby shopping mall, plus the name of the store. Does this ERD follow the rules of Second Normal Form?
+If you spot a violation correct it.</p>
+<p><img src="./img/02.png" alt=""></p>
+<p>A color scheme for a car includes specifications for paint color for the body and the interior colors and materials. For example: The “Desert” color scheme includes silver paint and gray leather interior; the “Sunburst” color scheme includes gold paint and cream leather interior.  Does the model below follow the rules of Third Normal Form? If you spot a violation, correct it.</p>
+<p><img src="./img/03.png" alt=""></p>
+<p>Assume the following business rules:</p>
+<p>An athlete employs one agent.
+An agent may work for one or more athletes.
+An athlete may play for one team.
+A team may have one or more players.
+Does this model contain transitive dependencies?</p>
+<p><img src="./img/04.png" alt=""></p>
+<p>Check your movie database ERD to ensure it conforms to 1NF 2NF 3NF.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Continuous Assessment</h1>
+<p>For the rest of the lab please work on your ERD for the continuous assessment.</p>
+<h1>Solution</h1>
+<p><img src="./img/05.png" alt=""></p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
