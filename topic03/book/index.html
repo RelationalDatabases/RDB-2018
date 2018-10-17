@@ -1,0 +1,349 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+       Entity Relationship Modelling
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-03">
+      Lab-03
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="Exercises">
+      Exercises
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic03/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06/book/index.html">
+          Lab-06
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-03">
+        <h1>Objectives</h1>
+<p>This lab will put into practice the entity relationship diagraming you have seen in the lectures.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>ERDish practice</h1>
+<p><img src="./img/00.png" alt=""></p>
+<ul>
+<li>Each EMPLOYEE may be assigned to one or more DEPARTMENTs.</li>
+<li>Each DEPARTMENT must be responsible for one or more EMPLOYEEs.</li>
+</ul>
+<ul>
+<li>Each EMPLOYEE must be assigned to one and only one DEPARTMENT.</li>
+<li>Each DEPARTMENT must be responsible for one or more EMPLOYEEs.</li>
+</ul>
+<ul>
+<li>Each EMPLOYEE must be assigned to exactly one DEPARTMENT.</li>
+<li>Each DEPARTMENT may be responsible for exactly one EMPLOYEE.</li>
+</ul>
+<p>Which text corresponds to the image?</p>
+<p>Using ERDish write the relationships for the diagram below.
+Comment on each one, do you think each is correct?</p>
+<p><img src="./img/01.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Practice</h1>
+<p>Identify the Entities, optional and mandatory Attributes, unique identifiers, and relationships (including optionality and cardinality) for the following business description:</p>
+<p>Splash n&#39; Stretch is a leisure centre with both a gym and swimming pool. All users of the facilities must be members. Classes are taught in the leisure centre for members. Members must register for classes and some classes require additional payment. In addition, members must provide the instructor with any medical/ health issues which may affect their participation, for example, if a members is asthmatic, has a heart problem, has epilepsy etc. Each class is taught by a qualified staff member from the gym or pool departments. Employees consist of cleaners, office staff, receptionists, gym instructors, and lifeguards. Each department has its own manager. Each employee has a unique employee ID, PPS number, name, address, phone number and start date. The leisure centre requires that all staff are qualified in first aid. This qualification must be renewed every two years. Lifeguard qualifications also need to be renewed every two years and the gym instructors must also hold the necessary qualifications.</p>
+<p>Once you have identified everything, draw the diagram.
+Check that all the relationships are drawn correctly by using the ERDish technique.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Exercises">
+        <h1>Exercises</h1>
+<p>You are a small database consulting company specializing in developing databases
+for the medical industry. You have just been awarded the contract to develop a data
+model for a database application system for a mid-size health insurance company to
+keep track of health claims including patient information, provider(doctor)
+information, information about patient visits to their doctor as well as prescription
+drugs prescribed to patients.</p>
+<p>Information such as patient name, address, phone, email etc. are needed as well as
+who each patient’s primary care doctor is, their insurance ID number and insurance
+company name. We also want information on each doctor such as their specialty
+and what hospitals they are affiliated with as well as their phone, address etc.
+Regarding the hospitals themselves we will need to know where they are located
+and how to contact them.</p>
+<p>The prescriptions given to each patient by a health-care provider also need to be
+tracked in this particular database at this time to determine claim eligibility including
+some basic information on the drug being prescribed to make sure there are no
+conflicts with a patient’s other prescriptions. We need to know each drug’s name,
+purpose/use and possible side effects.</p>
+<p>Eventually, the database will be used to track trends and for some extrapolative
+modeling based on the accumulated data. The database will be accessible in English
+only right now, although plans include making it available in multiple languages
+eventually.</p>
+<p>Based on the business scenario stated above you will identify the database needs,
+and then create a conceptual data model to support these needs.</p>
+<ol>
+<li>Review the types of information a medical database may contain. Read articles
+and check  the internet to understand the challenges of tracking this information.</li>
+<li>Research medical information to better understand your topic. Look for the type of
+information you will need to track.</li>
+<li>Build a list of business needs, rules and assumptions based on your scenario,
+research, and objectives.</li>
+<li>Develop a list of potential entities including their attributes, the attribute’s
+optionality as well as a possible UID for each entity.</li>
+<li>Create a preliminary Entity Relationship Diagram (ERD) that meets these needs
+and objectives.</li>
+</ol>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
