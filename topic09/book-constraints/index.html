@@ -7,8 +7,11 @@
 
      
 
+<<<<<<< HEAD
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+=======
+>>>>>>> 1c76ea66c1a3da8a57495feb63efdb32fc6ce056
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
@@ -154,7 +157,10 @@ body
 
 <div class="ui segment pushable">
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
+<<<<<<< HEAD
     <br><br>
+=======
+>>>>>>> 1c76ea66c1a3da8a57495feb63efdb32fc6ce056
     
       
         <a class="item" href="../../topic01/book/index.html">
@@ -205,7 +211,11 @@ body
       
     
       
+<<<<<<< HEAD
         <a class="active item" href="../../topic09/book-constraints/index.html">
+=======
+        <a class="item" href="../../topic09/book-constraints/index.html">
+>>>>>>> 1c76ea66c1a3da8a57495feb63efdb32fc6ce056
           Lab-09
         </a>
       
@@ -230,7 +240,11 @@ If you do not have your own work complete from last week, here is a copy:</p>
 <p>Constraints that we should add are primary key, unique keys, foreign keys and mandatory attributes.</p>
 <p>First you must write a DROP TABLE statement to remove the already created tables and then we edit the CREATE TABLE statements to define the constraints and re-run the CREATE TABLE statement.</p>
 <pre><code>
+<<<<<<< HEAD
 DROP TABLE IF EXISTS graduates;</code></pre>
+=======
+DROP TABLE graduates;</code></pre>
+>>>>>>> 1c76ea66c1a3da8a57495feb63efdb32fc6ce056
 <p>Include a DROP TABLE statement just prior to each CREATE TABLE statement in your .sql file</p>
 <h2>Primary Key Constraint</h2>
 <p>Now we edit your CREATE TABLE statement:</p>
@@ -248,7 +262,11 @@ DROP TABLE IF EXISTS graduates;</code></pre>
 <h2>Mandatory attributes</h2>
 <p>We implement mandatory attributes using the NOT NULL keywords. This ensures that each instance of an entity will have a value contained in the attribute you state is NOT NULL.</p>
 <p>For example in the graduates table, it would be advisable to have last_name, and first_name as mandatory when each new student is added to the system. They will earn credits over time and the graduate date will be entered upon completion of the programme.</p>
+<<<<<<< HEAD
 <pre><code>DROP TABLE IF EXISTS graduates;
+=======
+<pre><code>DROP TABLE graduates;
+>>>>>>> 1c76ea66c1a3da8a57495feb63efdb32fc6ce056
 CREATE TABLE graduates
 ( student_id INT(6) PRIMARY KEY AUTO_INCREMENT,
   last_name VARCHAR(15) NOT NULL,
@@ -284,7 +302,11 @@ ON DELETE action
 ON UPDATE action</code></pre>
 <p>The following SQL will drop and then recreate these two tables with a foreign key.</p>
 <pre><code>
+<<<<<<< HEAD
 DROP TABLE IF EXISTS orders_ff;
+=======
+DROP TABLE orders_ff;
+>>>>>>> 1c76ea66c1a3da8a57495feb63efdb32fc6ce056
 CREATE TABLE orders_ff
 (
 number INT(6) PRIMARY KEY AUTO_INCREMENT,
