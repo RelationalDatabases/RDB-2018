@@ -1,0 +1,451 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      SELECT statement
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-09">
+      Lab-09
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <a class="item" data-tab="05">
+      05
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic08/book-create/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic09/book-constraints/index.html">
+          Lab-09
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-09">
+        <h1>Objectives</h1>
+<p>This lab will put into practice creating constraints on tables.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Implementing constraints</h1>
+<p>You have already created several tables, however they do not have any constraints on them yet. In order to put constraints on the tables we can drop the tables and recreate them.</p>
+<p>Please open the .sql file you saved last week containing your CREATE TABLE statements.
+If you do not have your own work complete from last week, here is a copy:</p>
+<p>-<a href="archives/lab8.sql">create table statements</a></p>
+<p>Constraints that we should add are primary key, unique keys, foreign keys and mandatory attributes.</p>
+<p>First you must write a DROP TABLE statement to remove the already created tables and then we edit the CREATE TABLE statements to define the constraints and re-run the CREATE TABLE statement.</p>
+<pre><code>
+DROP TABLE IF EXISTS graduates;</code></pre>
+<p>Include a DROP TABLE statement just prior to each CREATE TABLE statement in your .sql file</p>
+<h2>Primary Key Constraint</h2>
+<p>Now we edit your CREATE TABLE statement:</p>
+<p>You should have a unique identifier shown on your ER diagram. For the graduates table it is student_id.</p>
+<p>We implement the primary key constraint by using the PRIMARY KEY reserved word in MySQL.</p>
+<p>We can also use a useful feature that generates an id, it will start at 1 and increment by 1 for each new record entered into the table. The keyword to use is: AUTO_INCREMENT</p>
+<pre><code>CREATE TABLE graduates
+( student_id INT(6) PRIMARY KEY AUTO_INCREMENT,
+  last_name VARCHAR(15),
+  first_name VARCHAR(15),
+  credits INT(3),
+  graduation_date DATE
+);</code></pre>
+<p>Do the same now for the other tables from lab8, shift, shift assignment, order, order line, food item and frequent diner card.</p>
+<h2>Mandatory attributes</h2>
+<p>We implement mandatory attributes using the NOT NULL keywords. This ensures that each instance of an entity will have a value contained in the attribute you state is NOT NULL.</p>
+<p>For example in the graduates table, it would be advisable to have last_name, and first_name as mandatory when each new student is added to the system. They will earn credits over time and the graduate date will be entered upon completion of the programme.</p>
+<pre><code>DROP TABLE IF EXISTS graduates;
+CREATE TABLE graduates
+( student_id INT(6) PRIMARY KEY AUTO_INCREMENT,
+  last_name VARCHAR(15) NOT NULL,
+  first_name VARCHAR(15) NOT NULL,
+  credits INT(3),
+  graduation_date DATE
+);</code></pre>
+<p>By having the DROP TABLE statement right before the CREATE TABLE means you can run the section of code or the complete script without errors.</p>
+<p>Here we have added NOT NULL to the appropriate attributes.</p>
+<p>Do this now for only the shift, order, frequent diner card and food item tables (ignore order line and shift assignment), refer to the ER diagram for the Fast Food Restaurant below:</p>
+<p><img src="./img/04.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>FOREIGN KEY Constraints</h1>
+<p>A foreign key is a field in a table that matches another field of another table. A foreign key places constraints on data in the related tables, which enables MySQL to maintain referential integrity.</p>
+<p>If we look at the relationship between Order and Frequent Diner Card.</p>
+<p><img src="./img/18.png" alt=""></p>
+<ul>
+<li>Each Order may be placed with one Frequent Diner Card.</li>
+<li>Each Frequent Diner Card may be used for 1 or more Orders.</li>
+</ul>
+<p>This is a 1:M one to many relationship.
+- The Frequent Diner Card is the parent entity.
+- The Order is the child entity.</p>
+<p>In this case a row in the orders_ff table may contain a value that matches a value in the primary key of the frequent_diner_card table.
+We must add another column to the orders_ff table that refers to the frequent_diner_card table. We will call this new column freq_diner_num.</p>
+<p>The syntax for creating a foreign key is as follows:</p>
+<pre><code>FOREIGN KEY foreign_key_name(column(s))
+REFERENCES parent_table(column(s))
+ON DELETE action
+ON UPDATE action</code></pre>
+<p>The following SQL will drop and then recreate these two tables with a foreign key.</p>
+<pre><code>
+DROP TABLE IF EXISTS orders_ff;
+CREATE TABLE orders_ff
+(
+number INT(6) PRIMARY KEY AUTO_INCREMENT,
+date DATE,
+time TIME,
+freq_diner_num INT(6),
+FOREIGN KEY fk_dinercard(freq_diner_num) REFERENCES frequent_diner_card(id)
+ON UPDATE CASCADE
+ON DELETE SET NULL
+);</code></pre>
+<h1>Exercise</h1>
+<p>Using the following entities, write the CREATE TABLE statements for both tables. Ensure you implement the primary keys and foreign key.</p>
+<p><img src="./img/19.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>Recursive Relationship FOREIGN KEY</h1>
+<p>Sometimes the parent and child table are the same. The foreign key refers back to the primary key of the table.
+For example the employees table:</p>
+<p><img src="./img/20.png" alt=""></p>
+<p>Each Employee may manage one or more Employees.
+Each Employee must be managed by one Employee.</p>
+<p>To implement this relationship we must add another column to the employees_b table that refers to the primary key of the same table.</p>
+<pre><code>
+CREATE TABLE employees_b
+(
+  employeeNumber INT(6) PRIMARY KEY AUTO_INCREMENT,
+  lastName VARCHAR(20),
+  firstName VARCHAR(20),
+  extension INT(4),
+  email VARCHAR(35),
+  officeCode INT(4),
+  managed_by INT(6),
+  FOREIGN KEY FK_mgr_num(managed_by)
+  REFERENCES employees_b(employeeNumber)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE
+  );</code></pre>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Unique constraints</h1>
+<p>When you want to enforce uniqueness in a column you need to use the UNIQUE constraint.</p>
+<p>Syntax for defining at the column level single column:</p>
+<pre><code>
+CREATE TABLE table_name (
+  column_name data_type Unique
+);</code></pre>
+<p>or at the table level single column:</p>
+<pre><code>
+CREATE TABLE table_name (
+  column_name data_type,
+  UNIQUE(column_name)
+);</code></pre>
+<p>or at the table level multi column:</p>
+<pre><code>
+CREATE TABLE table_name (
+  column_name data_type,
+  column_name2 data_type,
+  UNIQUE(column_name,column_name2)
+);</code></pre>
+<h2>Exercise</h2>
+<p>Add another column to the graduates table, call it email and define it with a UNIQUE constraint.
+Consider what other columns on the tables you have created in this lab should also have UNIQUE constraints added.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="05">
+        <h1>NOT NULL Constraint</h1>
+<p>The NOT NULL constraint is a column constraint that forces the values of a column to non-NULL values only.</p>
+<p>The syntax is as follows:</p>
+<pre><code>
+CREATE TABLE table_name (
+  column_name data_type NOT NULL
+);</code></pre>
+<h2>Exercise</h2>
+<p>Look again at all the tables you have created in this lab and add NOT NULL where appropriate.
+Make sure all of your tables drop and recreate when you run your script.</p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
