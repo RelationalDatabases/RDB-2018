@@ -4,7 +4,7 @@ CREATE TABLE graduates
   last_name VARCHAR(15),
   first_name VARCHAR(15),
   credits INT(3) DEFAULT 0,
-  graduation_date DATE
+  graduation_date DATE 
 );
 
 DROP TABLE shift;
@@ -41,7 +41,7 @@ CREATE TABLE frequent_diner_card
 DROP TABLE shift_assignment;
 CREATE TABLE shift_assignment
 (
-  date DATE
+  date DATE 
 );
 
 DROP TABLE order_line;

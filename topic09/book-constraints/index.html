@@ -207,6 +207,18 @@ body
         </a>
       
     
+      
+        <a class="item" href="../../topic10/book-select/index.html">
+          Lab-10
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic11/book-groupby/index.html">
+          Lab-11
+        </a>
+      
+    
   </div>
   <div class="pusher" tabindex="-1">
     <div class="ui basic segment" id="labchat">
@@ -227,7 +239,7 @@ If you do not have your own work complete from last week, here is a copy:</p>
 <p>Constraints that we should add are primary key, unique keys, foreign keys and mandatory attributes.</p>
 <p>First you must write a DROP TABLE statement to remove the already created tables and then we edit the CREATE TABLE statements to define the constraints and re-run the CREATE TABLE statement.</p>
 <pre><code>
-DROP TABLE graduates;</code></pre>
+DROP TABLE IF EXISTS graduates;</code></pre>
 <p>Include a DROP TABLE statement just prior to each CREATE TABLE statement in your .sql file</p>
 <h2>Primary Key Constraint</h2>
 <p>Now we edit your CREATE TABLE statement:</p>
@@ -245,7 +257,7 @@ DROP TABLE graduates;</code></pre>
 <h2>Mandatory attributes</h2>
 <p>We implement mandatory attributes using the NOT NULL keywords. This ensures that each instance of an entity will have a value contained in the attribute you state is NOT NULL.</p>
 <p>For example in the graduates table, it would be advisable to have last_name, and first_name as mandatory when each new student is added to the system. They will earn credits over time and the graduate date will be entered upon completion of the programme.</p>
-<pre><code>DROP TABLE graduates;
+<pre><code>DROP TABLE IF EXISTS graduates;
 CREATE TABLE graduates
 ( student_id INT(6) PRIMARY KEY AUTO_INCREMENT,
   last_name VARCHAR(15) NOT NULL,
@@ -281,7 +293,7 @@ ON DELETE action
 ON UPDATE action</code></pre>
 <p>The following SQL will drop and then recreate these two tables with a foreign key.</p>
 <pre><code>
-DROP TABLE orders_ff;
+DROP TABLE IF EXISTS orders_ff;
 CREATE TABLE orders_ff
 (
 number INT(6) PRIMARY KEY AUTO_INCREMENT,
