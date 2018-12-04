@@ -1,0 +1,403 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      Transaction Management
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-11">
+      Lab-11
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic08/book-create/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic09/book-constraints/index.html">
+          Lab-09
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic10/book-select/index.html">
+          Lab-10
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic11/book-groupby/index.html">
+          Lab-11
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-11">
+        <h1>Objectives</h1>
+<p>This lab will put into practice Joins, group functions and the GROUP BY clause</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Lab 10 solution</h1>
+<ul>
+<li><a href="archives/lab10.sql">Select Statements</a></li>
+</ul>
+<h1>Inner Joins</h1>
+<p>The inner join allows you to match rows in one table with rows in other tables.</p>
+<p>You must specify the following:
+- the main table that appears in the FROM clause
+- the table you want to join with the main table, which appears in the INNER JOIN clause
+- the join condition which appears after the ON keyword of the INNER JOIN clause.</p>
+<pre><code>  SELECT column_list
+    FROM table1
+    INNER JOIN table2 ON join_condition1
+    INNER JOIN table3 ON join_condition2
+    …
+    WHERE where_conditions;</code></pre>
+<p>Try the next piece of code. It links the products and productLines tables to return details on each product and the description.</p>
+<pre><code>SELECT t1.productCode,
+       t1.productName,
+       t2.textDescription
+FROM products t1
+INNER JOIN
+     productlines t2 ON t1.productLine = t2.productLine;</code></pre>
+<p><img src="./img/01.png" alt=""></p>
+<p>Make changes to the statement so that you include the USING clause. The columns to be joined are called the same name productLine so you can use the USING clause instead.</p>
+<p>Try the following piece of code. It links the products table to the orderdetails table and using a condition to only select the orders for a particular product code with a second condition on the price.</p>
+<pre><code>SELECT
+      o.orderNumber,
+      p.productName,
+    p.productCode,
+      p.msrp,
+      o.priceEach
+FROM products p INNER JOIN orderdetails o
+ON p.productCode = o.productCode
+WHERE p.productCode = &quot;S10_1678&quot;
+AND p.msrp &gt; o.priceEach;</code></pre>
+<h2>LEFT JOIN</h2>
+<p>LEFT JOIN allows you to query data from two or more database tables.
+This join allows you to select all the rows from the left table that match the join condition with the right table and all those rows that do not match.</p>
+<p><img src="./img/02.png" alt=""></p>
+<p>Try this piece of code, make sure you understand the data that is returned.</p>
+<pre><code>
+SELECT
+    c.customerNumber,
+    c.customerName,
+    o.orderNumber,
+    o.status
+FROM customers c
+LEFT JOIN orders o ON c.customerNumber = o.customerNumber;</code></pre>
+<p><img src="./img/04.png" alt=""></p>
+<p>The LEFT JOIN is very useful to find all those rows in the left table that do not match rows in the right.</p>
+<p>Try writing the SELECT statement to find the customers how have no orders associated to them.</p>
+<h2>Practice:</h2>
+<p>The tables you created in Lab09 for the Diner, there was an orders table and a frequent diner card table. These tables should have data inserted into them from the exercises in lab 8.
+Practice your joins using these two tables and place conditions on your statement so that only some data is returned.
+Also use the other tables that were loaded into your MySQL database the first week. Figure out how these tables are connected by looking at each table&#39;s details by right clicking on the table name and choosing Table Inspector.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>GROUP FUNCTIONS</h1>
+<p>If your MySQL installation does not have the world database schema showing in MySQL Workbench then you need to download and execute the following script:</p>
+<p>-<a href="archives/world.sql.zip">world database</a></p>
+<p>Once you have run the script you should see it in your schema view. To use tables in the world database you must double click on it so it shows in bold. You can then write SQL statements on the tables included and the statements will run successfully. If you do not have the correct schema selected Workbench will tell the you tables do not exist in your current schema.</p>
+<p><img src="./img/03.png" alt=""></p>
+<h1>practice group funcitons, AVG, MIN, MAX, SUM, COUNT</h1>
+<p>Do this practice in the classicmodels schema where the tables exist.</p>
+<ul>
+<li>Using the customers table find the minimum creditLimit, then the maximum, and the average.</li>
+<li>Count how many customers are from the state of New York.</li>
+<li>Find out the total price for order 10100. (you will need to join the order table to the orderdetails table and sum the priceEach).</li>
+<li>What is the average payment on the payments table?</li>
+<li>What is the total quantityInStock on the products table?</li>
+<li>Count the number of customers that have orders with a status of resolved.</li>
+</ul>
+<p>If you want further practice, change to the world schema and write the queries from the lecture slides (slides 8-12 in group functions slide deck)</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>GROUP BY</h1>
+<p>Continuing to use the worlds schema, write the following queries:</p>
+<ul>
+<li>What is the total surface area of all countries in the Caribbean?</li>
+<li>What is the average, minimum and sum of the surface area for Europe?</li>
+</ul>
+<h1>What if we want to see those answers for each country in Europe?</h1>
+<p>Write the queries to answer the following:</p>
+<ul>
+<li>What is the sum of surface area for each country in Europe?</li>
+<li>What is the average surface area for each continent?</li>
+<li>What city has the maximum population per country?</li>
+</ul>
+<p>Using the lecture slides from the Group by slide deck, write and test some of the queries with a group by clause.</p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
